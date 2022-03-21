@@ -28,7 +28,7 @@ service BlogV1 {
 message AddNoteV1Request{
   string title = 1;
   string text = 2;
-  string teg = 3;
+  string tag = 3;
 }
 
 message AddNoteV1Response{
@@ -40,8 +40,8 @@ message ListNotesV1Response{
     int64 id = 1;
     string title = 2;
     string text = 3;
-    string tag =4;
-    int64 creating_data =5;
+    string tag = 4;
+    int64 created_at = 5;
   }
 
   repeated Note notes = 1;

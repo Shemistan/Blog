@@ -11,10 +11,10 @@ import (
 )
 
 func (b *Blog) ListNotesV1(ctx context.Context, _ *emptypb.Empty) (*pb.ListNotesV1Response, error) {
-	res, err := b.BlogService.ShowNotes(ctx)
+	res, err := b.BlogService.ListNotes(ctx)
 
 	if err != nil {
-		return nil, status.Error(codes.NotFound, fmt.Sprintf("failed to showing notes: %v", err.Error()))
+		return nil, status.Error(codes.Unknown, fmt.Sprintf("failed to showing notes: %v", err.Error()))
 	}
 
 	var notes []*pb.ListNotesV1Response_Note
@@ -25,7 +25,7 @@ func (b *Blog) ListNotesV1(ctx context.Context, _ *emptypb.Empty) (*pb.ListNotes
 			Title:        note.Title,
 			Text:         note.Text,
 			Tag:          note.Tag,
-			CreatingData: note.CreatingData,
+			CreatingData: note.CreatedAt,
 		})
 	}
 

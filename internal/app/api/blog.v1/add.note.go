@@ -18,8 +18,8 @@ func (b *Blog) AddNoteV1(ctx context.Context, req *pb.AddNoteV1Request) (*pb.Add
 	})
 
 	if err != nil {
-		return nil, status.Error(codes.NotFound, fmt.Sprintf("failed to adding note: %v", err.Error()))
+		return nil, status.Error(codes.Unknown, fmt.Sprintf("failed to adding note: %v", err.Error()))
 	}
 
-	return &pb.AddNoteV1Response{Id: res.NoteId}, nil
+	return &pb.AddNoteV1Response{Id: res}, nil
 }

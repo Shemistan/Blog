@@ -1,0 +1,6 @@
+.idea
+.bin
+vendor
+pkg
+auth_system_out_log.log
+docs/proto.swagger.json

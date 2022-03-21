@@ -98,7 +98,7 @@ func (a *App) Run() error {
 func (a *App) initConfig(configPath string) {
 	_, err := toml.DecodeFile(configPath, a.GetConfig())
 	if err != nil {
-		log.Println("Can not find configs file, using default values:", err)
+		log.Println("Can not find config file, using default values:", err)
 		a.SetConfigDefaultParams(a.GetConfig())
 	}
 }

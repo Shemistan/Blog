@@ -15,8 +15,8 @@ const (
 )
 
 type IBlogSystemService interface {
-	AddNote(ctx context.Context, note *model.Note) (*model.AddResponse, error)
-	ShowNotes(ctx context.Context) ([]*model.Note, error)
+	AddNote(ctx context.Context, note *model.Note) (int64, error)
+	ListNotes(ctx context.Context) ([]*model.Note, error)
 }
 
 type BlogSystemService struct {

@@ -9,7 +9,7 @@ create table notes(
     title varchar(20) not null,
     note_text text not null,
     tag varchar(20) not null,
-    creating_data integer not null
+    created_at timestamp not null default now()
 );
 
 alter table notes owner to shem;

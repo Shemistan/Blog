@@ -6,7 +6,8 @@ help: ## Отобразить описание справки
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' Makefile | sort | awk \
 	'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-init: gen ## Инициализация приложения
+	## Инициализация приложения
+init: gen
 	go mod tidy
 	go mod vendor
 
@@ -24,6 +25,7 @@ gen: ## Генерация proto-файлов
 				api/blog.v1/blog.system.proto
 		mv pkg/blog.v1/github.com/Shemistan/blog/pkg/blog.v1/* pkg/blog.v1/
 		rm -rf pkg/blog.v1/github.com
+
 
 lint:
 	golangci-lint run
