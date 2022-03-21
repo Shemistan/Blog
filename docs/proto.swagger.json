@@ -93,9 +93,8 @@
         "tag": {
           "type": "string"
         },
-        "creating_data": {
-          "type": "string",
-          "format": "int64"
+        "created_at": {
+          "type": "string"
         }
       }
     },
@@ -141,7 +140,7 @@
         "text": {
           "type": "string"
         },
-        "teg": {
+        "tag": {
           "type": "string"
         }
       }

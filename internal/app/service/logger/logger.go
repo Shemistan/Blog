@@ -17,12 +17,10 @@ func NewLoggerService(stdOut *logrus.Logger, stdErr *logrus.Logger) *Service {
 	}
 }
 
-//nolint
 func (s *Service) Info(args ...interface{}) {
 	s.stdOut.Info(args)
 }
 
-//nolint
 func (s *Service) Error(args ...interface{}) {
 	s.stdErr.Error(args)
 }

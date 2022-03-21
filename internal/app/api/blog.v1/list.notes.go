@@ -21,11 +21,11 @@ func (b *Blog) ListNotesV1(ctx context.Context, _ *emptypb.Empty) (*pb.ListNotes
 
 	for _, note := range res {
 		notes = append(notes, &pb.ListNotesV1Response_Note{
-			Id:           note.Id,
-			Title:        note.Title,
-			Text:         note.Text,
-			Tag:          note.Tag,
-			CreatingData: note.CreatedAt,
+			Id:        note.Id,
+			Title:     note.Title,
+			Text:      note.Text,
+			Tag:       note.Tag,
+			CreatedAt: note.CreatedAt,
 		})
 	}
 

@@ -74,10 +74,10 @@ func (r *repo) ListNotes(ctx context.Context) ([]*model.Note, error) {
 	}(rows)
 
 	for rows.Next() {
-		var id, creatingData int64
-		var title, text, tag string
+		var id int64
+		var title, text, tag, createdAt string
 
-		if err = rows.Scan(&id, &title, &text, &tag, &creatingData); err != nil {
+		if err = rows.Scan(&id, &title, &text, &tag, &createdAt); err != nil {
 			return nil, err
 		}
 
@@ -86,7 +86,7 @@ func (r *repo) ListNotes(ctx context.Context) ([]*model.Note, error) {
 			Title:     title,
 			Text:      text,
 			Tag:       tag,
-			CreatedAt: creatingData,
+			CreatedAt: createdAt,
 		})
 	}
 

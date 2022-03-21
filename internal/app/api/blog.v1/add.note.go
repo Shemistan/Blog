@@ -14,7 +14,7 @@ func (b *Blog) AddNoteV1(ctx context.Context, req *pb.AddNoteV1Request) (*pb.Add
 	res, err := b.BlogService.AddNote(ctx, &model.Note{
 		Title: req.GetTitle(),
 		Text:  req.GetText(),
-		Tag:   req.GetTeg(),
+		Tag:   req.GetTag(),
 	})
 
 	if err != nil {
