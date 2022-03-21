@@ -1,4 +1,11 @@
 # Blog
 
-Running app:
-1- docker-compose up
+Для запуска:
+Развертываем БД для работы приложения
+docker-compose up
+
+Выполняем команду для генерации прото
+make init
+
+Запускаем по стандартному
+go run cmd/main.go
