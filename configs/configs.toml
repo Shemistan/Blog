@@ -1,0 +1,22 @@
+[server]
+port_rest = ":8090"
+port_grpc = ":9090"
+port_docs = ":8099"
+
+
+[logger_conf]
+stdout_file_name = "blog_system_out_log.log"
+stderr_file_name = "blog_system_out_log.log"
+stdout_logger_level = "debug"
+stderr_logger_level = "debug"
+timestamp_format = "02-01-2006 15:04:05"
+full_timestamp = true
+write_logger_info_in_file = false
+
+[db]
+host = "localhost"
+port = 54321
+user = "shem"
+password = "12345678"
+db_name = "blog"
+ssl_mode = "disable"
